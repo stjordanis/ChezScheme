@@ -1945,3 +1945,5 @@
     compress_io.c, new_io.c, externs.h,
     bytevector.ms, mats/Mf-base, root-experr*
     io.stex, objects.stex, release_notes.stex
+- console I/O on Windows now supports Unicode characters in the BMP
+    expeditor.c, new-io.c, release_notes.stex
