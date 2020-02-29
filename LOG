@@ -1988,3 +1988,5 @@
     library.ss, mathprims.ss, newhash.ss, pdhtml.ss, pretty.ss,
     prims.ss, primvars.ss, print.ss, read.ss, record.ss, reloc.ss,
     strnum.ss, syntax.ss, trace.ss
+- updated bullyx patches
+    patch*
