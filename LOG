@@ -1990,3 +1990,5 @@
     strnum.ss, syntax.ss, trace.ss
 - updated bullyx patches
     patch*
+- added return-value check to make gcc happy.
+    scheme.c

@@ -759,12 +759,11 @@ static IBOOL find_boot(name, ext, fd, errorp) const char *name, *ext; int fd; IB
         if (c == ')') {
           char *sep; char *wastebuf[8];
           fprintf(stderr, "cannot find subordinate boot file");
-          if (LSEEK(fd, 0, SEEK_SET) != 0) {
+          if (LSEEK(fd, 0, SEEK_SET) != 0 || READ(fd, wastebuf, 8) != 8) { /* attempt to rewind and read magic number */
             fprintf(stderr, "---retry with verbose flag for more information\n");
             CLOSE(fd);
             S_abnormal_exit();
           }
-          (void) READ(fd, wastebuf, 8); /* magic number */
           (void) get_uptr(fd, &n); /* version */
           (void) get_uptr(fd, &n); /* machine type */
           (void) get_u8(fd);        /* open paren */
