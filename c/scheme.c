@@ -19,6 +19,7 @@
 #include <setjmp.h>
 #include <limits.h>
 #ifdef WIN32
+#include <io.h>
 #include <time.h>
 #else
 #include <sys/time.h>
@@ -581,11 +582,7 @@ static IBOOL find_boot(name, ext, fd, errorp) const char *name, *ext; int fd; IB
   uptr n = 0;
   INT c;
   const char *path;
-#ifdef WIN32
-  wchar_t *expandedpath;
-#else
   char *expandedpath;
-#endif
 
   if ((fd != -1) || S_fixedpathp(name)) {
     if (strlen(name) >= PATH_MAX) {
